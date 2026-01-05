@@ -1,0 +1,58 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+*.egg-info/
+.eggs/
+dist/
+build/
+
+# Virtual environments
+.venv/
+venv/
+ENV/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Test outputs
+tests/outputs/
+
+# Large files
+*.MOV
+*.mp4
+*.avi
+*.npz
+*.npy
+*.png
+*.jpg
+*.jpeg
+
+# Model weights (downloaded from HuggingFace)
+*.pt
+*.pth
+*.ckpt
+
+# Logs
+*.log
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Subpackages (should be cloned separately)
+SpaTrackerV2/
+FoundationPose/
+TraceAnything/
+sam3/
+sam-3d-objects/
+point_tracker/
+kPAM/
+
+# Claude
+.claude/
