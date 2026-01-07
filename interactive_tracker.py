@@ -108,6 +108,7 @@ class InteractiveTracker:
         frame_count = 0
         fps_time = time.time()
         fps = 0
+        idx = 0
 
         try:
             while True:
@@ -130,7 +131,9 @@ class InteractiveTracker:
 
                 # 添加帧到 tracker（如果已设置追踪点）
                 if self.query_point is not None:
-                    self.tracker.add_frame(color_image, depth_meters, self.intrinsic)
+                    if idx % 10 == 0:
+                        self.tracker.add_frame(color_image, depth_meters, self.intrinsic)
+                    idx += 1
 
                 # 计算 FPS
                 frame_count += 1
@@ -221,6 +224,7 @@ class InteractiveTracker:
                     else:
                         print("请先点击设置追踪点，并等待录制一些帧")
                 elif key == ord('r'):
+                    idx = 0
                     self.query_point = None
                     self.tracker.reset()
                     self.last_result = None
